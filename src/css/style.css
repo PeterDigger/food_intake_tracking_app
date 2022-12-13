@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background
+{
+    @apply 
+    flex 
+    items-center 
+    justify-center   /*ars */
+    md:grid-cols-2 
+    bg-sky-200 
+    h-screen 
+    /* place-items-center; */
+};
+
+.test
+{
+    @apply
+    grid
+    bg-sky-200
+    h-screen
+    sm:grid-cols-1
+    md:grid-cols-3
+};
+
+.greenLongBtn
+{
+    @apply 
+    text-white 
+    rounded-xl 
+    w-full
+    uppercase 
+    py-4
+    text-2xl 
+    font-bold 
+    cursor-pointer 
+    tracking-wider 
+    bg-green-600
+};
+
+.greenShortBtn
+{
+    @apply 
+    text-white 
+    rounded-xl
+    uppercase
+    p-3
+    text-lg
+    font-bold 
+    cursor-pointer 
+    tracking-wider 
+    bg-green-600
+};
+
+.greenBtn{
+    @apply
+    place-self-end
+    my-4
+    
+}
