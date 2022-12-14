@@ -1,5 +1,7 @@
+
+<!-- width='455' height='475' -->
 <?php
-    echo "        <svg width='455' height='475' viewBox='0 0 455 475' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    echo "        <svg  viewBox='0 0 455 475' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <g style='mix-blend-mode:multiply'>
     <ellipse cx='277' cy='453.598' rx='119' ry='21' fill='#7B7575' fill-opacity='0.32'/>
     </g>

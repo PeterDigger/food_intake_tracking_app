@@ -4,7 +4,7 @@
 session_start();
 
 // Variables
-$destination = "mysql:host=localhost; dbname=group8db; charset=utf8";
+$destination = "mysql:host=localhost; dbname=food_tracking; charset=utf8";
 $username = "root";
 $password = ""; 
 

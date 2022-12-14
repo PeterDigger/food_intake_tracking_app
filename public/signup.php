@@ -9,7 +9,7 @@
     </div>
 
     <div class="background">
-        <div class="md:col-span-1 h-2/4">
+        <div class="md:col-span-1 w-96 h-96">
             <?php
                 @include "../src/elements/mascot_happy.php"
             ?>

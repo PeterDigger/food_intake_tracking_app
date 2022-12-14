@@ -1,5 +1,5 @@
 <?php
-    $title = "Welcome"; // Title page name goes here
+    $title = "Progress"; // Title page name goes here
     include "../includes/header.php";
 ?>
 

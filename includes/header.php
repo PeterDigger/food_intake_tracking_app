@@ -9,6 +9,8 @@
         header('Location: index.php');
     }
 
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -25,29 +27,34 @@
     <!-- This only loads the files from the public folder -->
     <?php
         if($title === "Admin"){
-            echo "<link rel=\"stylesheet\" href=\"../css/style.css\">";
+            echo "<link rel='stylesheet' href='../css/style.css'>";
         }else{
-            echo "<link rel=\"stylesheet\" href=\"css/style.css\">";
+            echo "<link rel='stylesheet' href='css/style.css'>";
         }
-
+        if($title === "Welcome" ){
+            return;
+        }
     ?>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
+
 <body>
-    <header class="grid grid-cols-6 gap-4 absolute z-99 w-screen bg-cyan-400">
+    <header class="grid grid-cols-6 gap-10 z-99 p-5 bg-cyan-400">
+        
         <div class="col-start-2 col-span-1 place-self-center">
             <!-- Blank -->
         </div>
-        <div class="col-start-2 col-span-1 w-full text-center place-self-center rounded bg-green-300">
-            <a href="#">Logs</a>
+        <div class="col-start-2 col-span-1 w-full text-center place-self-center rounded-xl bg-green-300 p-2">
+            <a href="dashboard.php">Home</a>
         </div>
-        <div class="col-start-3 col-span-1 text-center place-self-center text-white">
-            <a href="#">Overview</a>
+        <div class="col-start-3 col-span-1 text-center place-self-center text-white p-2">
+            <a href="progress.php">Overview</a>
         </div>
-        <div class="col-start-4 col-span-1 place-self-center text-white">
-            <a href="#">News</a>
+        <div class="col-start-4 col-span-1 place-self-center text-white p-2">
+            <a href="news.php">News</a>
         </div>
-        <div class="col-start-5 col-span-1 place-self-center text-white">
+        <div class="col-start-5 col-span-1 place-self-center text-white p-2">
             <a href="#">
                 <?php 
                     if(isset($user))
@@ -56,7 +63,7 @@
                         }
                     else
                         {
-                            echo "Log in";
+                            echo "<a href='login.php'>Log in</a>";
                         };
                 ?>
             </a>
