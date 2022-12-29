@@ -1,8 +1,7 @@
 <?php
-include "includes/config.php";
+include_once "../includes/config.php";
 
 if(isset($_POST['submit'])){
-
     $uname = mysqli_real_escape_string($conn,$_POST['uname']);
     $password = mysqli_real_escape_string($conn,$_POST['password']);
 
@@ -11,6 +10,8 @@ if(isset($_POST['submit'])){
         $sql_query = "SELECT user_name FROM users WHERE user_email='$uname' AND user_password='$password'";
         $result = mysqli_query($conn, $sql_query);
         $row = mysqli_num_rows($result);
+
+        echo "ki";
 
         if($row == 1){
             session_start();
@@ -21,7 +22,9 @@ if(isset($_POST['submit'])){
                 header('Location: dashboard.php');
             }
         }else{
-            header('Location: index.php');
+            header('Location: choose.php');
         }
+    }else{
+        header('Location: index.php');
     }
 }

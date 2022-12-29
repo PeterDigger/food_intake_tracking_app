@@ -92,40 +92,49 @@
             <div>
 
                 <div class="grid m-5 w-auto bg-gray-200 rounded-xl dark:bg-gray-700">
-                    <div class=" bg-green-500 p-5 font-medium text-black text-left leading-none rounded-xl" style="width: 45%"> 
+                    <div id="vege" class=" bg-green-500 p-5 font-medium text-black text-left leading-none rounded-xl"> 
                         <p>Vegetable</p>
                         <p>Today: 3/5</p>
                     </div>
-                    <div class="inline-block absolute place-self-end">
-                        <button><?php @include "../src/elements/add.php" ?></button>
-                        <button><?php @include "../src/elements/minus.php" ?></button>
+                    <div id="vegediv" class="inline-block absolute place-self-end">
+                        <button class="easetrans" id="greenbtn"><?php @include "../src/elements/add.php" ?></button>
+                        <button class="easetrans" id="redbtn"><?php @include "../src/elements/minus.php" ?></button>
                     </div>
                 </div>
 
                 <div class="grid m-5 w-auto bg-gray-200 rounded-xl dark:bg-gray-700">
-                    <div class="bg-amber-300 p-5 font-medium text-black text-left leading-none rounded-xl" style="width: 100%"> 
+                    <div id="fruits" class="bg-amber-300 p-5 font-medium text-black text-left leading-none rounded-xl"> 
                         <p>Fruits</p>
                         <p>Today: 3/5</p>
                     </div>
-                    <div class="inline-block absolute place-self-end">
-                        <button><?php @include "../src/elements/add.php" ?></button>
-                        <button><?php @include "../src/elements/minus.php" ?></button>
+                    <div id="fruitsdiv" class="inline-block absolute place-self-end">
+                        <button class="easetrans" id="greenbtn1"><?php @include "../src/elements/add.php" ?></button>
+                        <button class="easetrans" id="redbtn1"><?php @include "../src/elements/minus.php" ?></button>
                     </div>
                 </div>
 
                 <div class="grid m-5 w-auto bg-gray-200 rounded-xl dark:bg-gray-700">
-                    <div class="bg-yellow-500 p-5 font-medium text-black text-left leading-none rounded-xl" style="width: 45%"> 
+                    <div id="dairy" class="bg-yellow-500 p-5 font-medium text-black text-left leading-none rounded-xl"> 
                         <p>Dairy</p>
                         <p>Today: 3/5</p>
                     </div>
-                    <div class="inline-block absolute place-self-end">
-                        <button><?php @include "../src/elements/add.php" ?></button>
-                        <button><?php @include "../src/elements/minus.php" ?></button>
+                    <div id="dairydiv" class="inline-block absolute place-self-end">
+                        <button class="easetrans" id="greenbtn2"><?php @include "../src/elements/add.php" ?></button>
+                        <button class="easetrans" id="redbtn2"><?php @include "../src/elements/minus.php" ?></button>
                     </div>
                 </div>
             </div>
 
             <button onclick="buttonHandler()" class="fixed z-90 bottom-10 right-8  w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:drop-shadow-2xl hover:animate-bounce duration-300"><?php @include "../src/elements/add_button.php" ?></button>
+
+            <button class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">Button A</button>
+
+            <form method="post" action="handler.php">
+
+                <button type="submit" name="passed" id="passed" class="btn btn-success btn-flat"><i class="fa fa-check"></i></button>
+                <button type="submit" name="insufficient" id="insufficient" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button>
+
+            </form>
         </div>
         
 <!-- spare div for the view -->
@@ -136,10 +145,6 @@
 
     </div>
 </div>
-
-<script>
-    // to be added
-</script>
 
 <?php
     include_once "../includes/footer.php";

@@ -57,9 +57,9 @@
         <div class="col-start-5 col-span-1 place-self-center text-white p-2">
             <a href="#">
                 <?php 
-                    if(isset($user))
+                    if(isset($uname))
                         {
-                            echo "Hi, ", $user;
+                            echo "Hi, ", $uname;
                         }
                     else
                         {

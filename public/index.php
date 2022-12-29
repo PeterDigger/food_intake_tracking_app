@@ -1,28 +1,43 @@
 <?php
-    // Website's title
-    $title = "Admin";
-    //========================================================
-    include "includes/header.php";
-    //========================================================
-
-    if(!isset($_SESSION['uname'])){
-        if ($_SESSION['uname'] != "admin")
-        header('Location: index.php');
-    };
-
-    // Fetching section
+    $title = "Welcome";
+    include "../includes/header.php";
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+    <div class="background">
+        <div class="md:col-span-1 w-96 h-96">
+            <span>
+                <?php
+                    @include "../src/elements/mascot_happy.php"
+                ?>
+            </span>
+        </div>
+
+        <div class="md:col-span-1 shadow-2xl rounded-3xl grid grid-cols-1 py-20 px-10 bg-white m-20 h-2/4 w-3/12">
+            <div class="grid text-right h-full">
+                <h1 class="text-5xl leading-3 uppercase font-bold">Welcome</h1>
+                <h1 class="text-4xl leading-3 uppercase font-bold">to</h1>
+                <h1 class="text-4xl leading-3 uppercase font-bold">Diet tracker</h1>
+            </div>
+            <div class="grid gap-10 content-end justify-items-center">
+                <button class="greenLongBtn">
+                    <a href="signup.php">
+                        SIGN UP WITH EMAIL
+                    </a>
+                </button>
+                <p>Already have account?
+                    <a href="login.php" class="text-green-600">
+                        Login
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+    </script>
+
+<?php
+    include_once "../includes/footer.php";
+?>

@@ -16,7 +16,7 @@
         <button class="w-4 h-5 rounded bg-slate-500 p-6 text-center"><</button>
 
         <?php if(true){
-            echo "Hi";
+            echo "15 Dec 2022";
         }?>
 
         <button class="w-4 h-5 rounded bg-slate-500 p-6 text-center">></button>
@@ -24,7 +24,7 @@
 
     <!-- graph -->
     <div>
-        <?php echo "hi";?>
+        <?php echo "Graph";?>
     </div>
 
 </div>
