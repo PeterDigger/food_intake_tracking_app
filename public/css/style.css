@@ -565,6 +565,14 @@ video {
   margin: 0px;
 }
 
+.m-6 {
+  margin: 1.5rem;
+}
+
+.m-10 {
+  margin: 2.5rem;
+}
+
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -657,6 +665,10 @@ video {
 
 .h-5 {
   height: 1.25rem;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .w-full {

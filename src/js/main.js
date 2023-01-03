@@ -32,75 +32,90 @@ greenbtn.addEventListener("click", function() {
         vege.style.width = vegeVal + "%"
         if (vegeVal === 100 ){
             happy.classList.toggle("invisible");
+            setTimeout(function(){
+                happy.classList.toggle("invisible");
+            }, 3000);
         }
     }else{
         vegeVal = 100
         vege.style.width = vegeVal + "%"
     }
-
 })
 
 greenbtn1.addEventListener("click", function() {
     if (fruitsVal < 100){
         fruitsVal += 20
         fruits.style.width = fruitsVal + "%"
+        if (fruitsVal === 100 ){
+            happy.classList.toggle("invisible");
+            setTimeout(function(){
+                happy.classList.toggle("invisible");
+            }, 3000);
+        }
     }else{
         fruitsVal = 100
         fruits.style.width = fruitsVal + "%"
     }
-    // fruits.style.width = "50" + "%"
-    // happy.classList.toggle("invisible");
 })
 
 greenbtn2.addEventListener("click", function() {
     if (dairyVal < 100){
         dairyVal += 20
         dairy.style.width = dairyVal + "%"
+        if (dairyVal === 100 ){
+            happy.classList.toggle("invisible");
+            setTimeout(function(){
+                happy.classList.toggle("invisible");
+            }, 3000);
+        }
     }else{
         dairyVal = 100
         dairy.style.width = dairyVal + "%"
     }
-
-    // dairy.style.width = "45" + "%"
-    // happy.classList.toggle("invisible");
 })
 
 redbtn.addEventListener("click", function() {
         if (vegeVal > 0){
             vegeVal -= 20
             vege.style.width = vegeVal + "%"
+            if (vegeVal === 0 ){
+                sad.classList.toggle("invisible");
+                setTimeout(function(){
+                    sad.classList.toggle("invisible");
+                }, 3000);
+            }
         }else{
             vegeVal = 0
             vege.style.width = vegeVal + "%"
         }
-        // fruits.style.width = "50" + "%"
-        // happy.classList.toggle("invisible");
-    
-    // setTimeout(function(){
-    //     sad.classList.toggle("invisible");
-    // }, 100);
 })
 
 redbtn1.addEventListener("click", function() {
     if (fruitsVal > 0){
         fruitsVal -= 20
         fruits.style.width = fruitsVal + "%"
+        if (fruitsVal === 0 ){
+            sad.classList.toggle("invisible");
+            setTimeout(function(){
+                sad.classList.toggle("invisible");
+            }, 3000);
+        }
     }else{
         fruitsVal = 0
         fruits.style.width = fruitsVal + "%"
     }
-    // fruits.style.width = "50" + "%"
-    // happy.classList.toggle("invisible");
-
-// setTimeout(function(){
-//     sad.classList.toggle("invisible");
-// }, 100);
 })
 
 redbtn2.addEventListener("click", function() {
     if (dairyVal > 0){
         dairyVal -= 20
         dairy.style.width = dairyVal + "%"
+        if (diaryVal === 0 ){
+            sad.classList.toggle("invisible");
+            setTimeout(function(){
+                sad.classList.toggle("invisible");
+            }, 3000);
+        }
     }else{
         dairyVal = 0
         dairy.style.width = dairyVal + "%"
@@ -132,3 +147,4 @@ $(document).ready(function()
         if(! mouse_is_inside) $('.form_wrapper').hide();
     });
 });
+

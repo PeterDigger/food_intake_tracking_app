@@ -46,7 +46,9 @@
         <!-- Button for confirmation -->
 
         <div class="flex items-end w-full">
-            <button class="greenShortBtn">Confirm</button>
+            <a href="dashboard.php">
+                <button class="greenShortBtn">Confirm</button>
+            </a>
         </div>
     </div>
     
