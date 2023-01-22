@@ -1,6 +1,6 @@
 <?php
     echo "
-    <svg width='465' height='475' viewBox='0 0 465 475' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <svg viewBox='0 0 465 475' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <g style='mix-blend-mode:multiply'>
     <ellipse cx='277' cy='453.598' rx='119' ry='21' fill='#7B7575' fill-opacity='0.32'/>
     </g>
@@ -30,6 +30,8 @@
     <circle cx='222' cy='232' r='3' fill='#D9D9D9'/>
     <circle cx='307.5' cy='218.5' r='5.5' fill='#D9D9D9'/>
     <circle cx='315' cy='227' r='3' fill='#D9D9D9'/>
+    
     </svg>
     "
 ?>
+

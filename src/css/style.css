@@ -6,13 +6,47 @@
 {
     @apply 
     flex 
-    items-center 
-    justify-center   /*ars */
-    md:grid-cols-2 
+    justify-center
+    /* md:grid-cols-2  */
     bg-sky-200 
-    h-screen 
+    h-screen
     /* place-items-center; */
 };
+
+.background2
+{
+    @apply 
+    flex 
+    items-center 
+    justify-center
+    md:grid-cols-2 
+    bg-sky-200 
+    h-fit
+    /* place-items-center; */
+};
+
+.background3
+{
+    @apply 
+    grid 
+    md:grid-cols-3
+    bg-sky-200 
+    h-screen
+    /* place-items-center; */
+}
+
+.svg-container {
+    width: 47vh;
+    height: 48vh;
+    object-fit: contain;
+}
+
+
+
+.progress_button{
+    @apply
+    mx-5 w-4 rounded bg-slate-500 px-4 py-3 text-center text-white font-bold
+}
 
 .test
 {
@@ -22,7 +56,20 @@
     h-screen
     sm:grid-cols-1
     md:grid-cols-3
-};
+}
+
+#dropdown-menu {
+  transition: all 0.3s ease;
+}
+
+.badge-text {
+    font-size: 1.5rem;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .greenLongBtn
 {
@@ -62,4 +109,13 @@
 
 .easetrans{
     @apply transition duration-150 ease-in-out delay-150 hover:scale-110
+}
+
+.inset-center {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }

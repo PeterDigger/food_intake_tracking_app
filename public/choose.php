@@ -1,7 +1,7 @@
 <?php
     $title = "Welcome"; // Title page name goes here
     include "../includes/header.php";
-
+    echo $uname;
 ?>
 
 <div class="background">

@@ -1,6 +1,6 @@
 <?php
 include_once "../includes/config.php";
-
+$error = false;
 if(isset($_POST['submit'])){
     $uname = mysqli_real_escape_string($conn,$_POST['uname']);
     $password = mysqli_real_escape_string($conn,$_POST['password']);
@@ -11,18 +11,15 @@ if(isset($_POST['submit'])){
         $result = mysqli_query($conn, $sql_query);
         $row = mysqli_num_rows($result);
 
-        echo "ki";
-
         if($row == 1){
+            $data = mysqli_fetch_assoc($result);
             session_start();
-            $_SESSION['uname'] = $uname;
-            if ($uname == 'admin'){
-                header('Location: admin.php');
-            }else{
-                header('Location: dashboard.php');
-            }
+            $_SESSION['uname'] = $data['user_name'];
+            header('Location: dashboard.php');
         }else{
-            header('Location: choose.php');
+            session_start();
+            $_SESSION["error"] = "Invalid username or password.";
+            header('Location: login.php');
         }
     }else{
         header('Location: index.php');

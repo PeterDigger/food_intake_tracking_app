@@ -20,6 +20,9 @@
             </div>
         </div>
 
+        INSERT INTO news(`news_name`,`news_description`,`date`,`admin_ID`)
+        VALUES('Healthy eating', 'Eating healthy is proven to improve your memory!', NOW(), 1)
+
         <!-- once got news, php will loop this div -->
         <div class="py-10 px-5 m-5 rounded-3xl bg-slate-300">
             <div class="bg-white p-5">

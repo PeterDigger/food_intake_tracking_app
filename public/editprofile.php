@@ -5,13 +5,11 @@
 ?>
 
 
-<div class="test">
+<div class="background">
 
-    <div class="md:col-span-1 md:flex md:justify-end">
+    <div class="md:col-span-1 md:flex md:justify-end"></div>
 
-    </div>
-
-    <div class="md:col-span-1 bg-white">
+    <div class="md:col-span-1 bg-white md:w-1/2">
         <div class="grid grid-cols-3 place-content-center md:col-span-1 bg-white">
             <div class="place-self-center md:col-span-1 bg-gray-300 w-40 h-40 rounded-full">
                 <!-- circles -->
@@ -37,12 +35,9 @@
                 
             </div>
         </div>
-        
     </div>
 
-    <div class="md:col-span-1 md:flex md:justify-end">
-
-    </div>
+    <div class="md:col-span-1 md:flex md:justify-end"></div>
 
 </div>
 
