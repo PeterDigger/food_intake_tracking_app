@@ -4,7 +4,7 @@
 
 ?>
 
-    <div class="background">
+    <div class="forthem">
         <div class="md:col-span-1 w-96 h-96">
             <span>
                 <?php

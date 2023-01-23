@@ -4,11 +4,18 @@
 
 ?>
 
-    <div class="admin absolute">
+<div class="relative">
+  <button class="absolute top-5 right-5 py-2 px-4 rounded-lg">
+        <a href="admin-login.php">
+            <?php
+                @include "../src/elements/admin.php"
+            ?>
+        </a>
+    </button>
+</div>
 
-    </div>
 
-    <div class="background2">
+    <div class="forthem">
         <div class="md:col-span-1 w-96 h-96">
             <?php
                 @include "../src/elements/mascot_happy.php"

@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
             $data = mysqli_fetch_assoc($result);
             session_start();
             $_SESSION['uname'] = $data['admin_name'];
-            header('Location: admintips.php');
+            header('Location: admin-viewtips.php');
         }else{
             session_start();
             $_SESSION["error"] = "Invalid username or password.";

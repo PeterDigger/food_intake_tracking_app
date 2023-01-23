@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2022 at 08:52 AM
+-- Generation Time: Jan 23, 2023 at 04:06 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -34,6 +34,13 @@ CREATE TABLE `admin` (
   `admin_password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_ID`, `admin_name`, `admin_email`, `admin_password`) VALUES
+(1, 'Admin', 'admin@gmail.com', 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +70,20 @@ CREATE TABLE `log` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `news_ID` int(5) NOT NULL,
+  `news_name` varchar(100) NOT NULL,
+  `news_description` text NOT NULL,
+  `date` datetime NOT NULL,
+  `admin_ID` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reward`
 --
 
@@ -70,7 +91,7 @@ CREATE TABLE `reward` (
   `reward_ID` int(5) NOT NULL,
   `no_stars` int(2) NOT NULL,
   `levels` int(2) NOT NULL,
-  `user_ID` int(5) NOT NULL
+  `user_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -85,6 +106,15 @@ CREATE TABLE `users` (
   `user_email` varchar(50) NOT NULL,
   `user_password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_ID`, `user_name`, `user_email`, `user_password`) VALUES
+(1, 'Chong', 'chongherng99@gmail.com', 'chong'),
+(2, 'Peter', 'peter@gmail.com', 'peter'),
+(3, 'Mandy', 'mandy@gmail.com', 'Mandy');
 
 --
 -- Indexes for dumped tables
@@ -107,21 +137,67 @@ ALTER TABLE `goals`
 --
 ALTER TABLE `log`
   ADD PRIMARY KEY (`log_ID`),
-  ADD KEY `goals_ID` (`goals_ID`,`user_ID`),
-  ADD KEY `user_ID` (`user_ID`);
+  ADD KEY `goals_ID` (`goals_ID`),
+  ADD KEY `user_ID_link2` (`user_ID`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`news_ID`);
 
 --
 -- Indexes for table `reward`
 --
 ALTER TABLE `reward`
   ADD PRIMARY KEY (`reward_ID`),
-  ADD KEY `user_ID` (`user_ID`);
+  ADD KEY `user_ID_link` (`user_ID`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `goals`
+--
+ALTER TABLE `goals`
+  MODIFY `goals_ID` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `log`
+--
+ALTER TABLE `log`
+  MODIFY `log_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `news_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `reward`
+--
+ALTER TABLE `reward`
+  MODIFY `reward_ID` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -131,7 +207,7 @@ ALTER TABLE `users`
 -- Constraints for table `log`
 --
 ALTER TABLE `log`
-  ADD CONSTRAINT `log_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `users` (`user_ID`);
+  ADD CONSTRAINT `user_ID_link2` FOREIGN KEY (`user_ID`) REFERENCES `users` (`user_ID`);
 
 --
 -- Constraints for table `reward`

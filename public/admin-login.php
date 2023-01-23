@@ -3,11 +3,7 @@
     include "../includes/admin-header.php";
 ?>
 
-    <div class="admin absolute">
-
-    </div>
-
-    <div class="background2">
+    <div class="forthem">
         <div class="md:col-span-1 w-96 h-96">
             <?php
                 @include "../src/elements/mascot_happy.php"
@@ -16,7 +12,7 @@
 
         <div class="md:col-span-1 shadow-2xl rounded-3xl grid grid-cols-1 py-20 px-10 bg-white m-20 h-2/4 w-3/12 ">
             <div class="grid h-full justify-items-center">
-                <h1 class="text-4xl leading-3 font-bold">Log In</h1>
+                <h1 class="text-4xl leading-3 font-bold">Admin</h1>
             </div>
             <div class="grid h-full">
                 <form action='authenadmin.php' method='POST'>

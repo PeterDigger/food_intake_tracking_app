@@ -41,7 +41,7 @@ snacktext.innerHTML = 'Today: ' + snackVal / 20 + '/5';
 
 document.cookie = "cookieName=cookieValue";
 
-console.log(greenbtn.parentElement.id)
+// console.log(greenbtn.parentElement.id)
 
 greenbtn.addEventListener("click", function() {
     if (vegeVal < 100){

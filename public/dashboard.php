@@ -161,9 +161,56 @@
         altFormat: "F j, Y",
         dateFormat: "Y-m-d",
         onClose: function (selectedDates, dateStr, instance) {
-            // your code to refresh the progress bar
+            // Clear out value
+            var status = 0;
+            document.getElementById("vege").style.width     = status * 20 + "%";
+            document.getElementById("fruits").style.width   = status * 20 + "%";
+            document.getElementById("dairy").style.width    = status * 20 + "%";
+            document.getElementById("snack").style.width    = status * 20 + "%";
+            document.getElementById("vegetext").innerHTML   = 'Today: ' + status + '/5';
+            document.getElementById("fruitstext").innerHTML = 'Today: ' + status + '/5';
+            document.getElementById("dairytext").innerHTML  = 'Today: ' + status + '/5';
+            document.getElementById("snacktext").innerHTML  = 'Today: ' + status + '/5';
+
+            // Send an AJAX request to a PHP script to fetch the data
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '../backends/ajax_fetch.php');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+            if (xhr.status === 200 && xhr.responseText) {
+                // Parse the JSON response and update the progress bars
+                var response = JSON.parse(xhr.responseText);
+
+                // Iterate through each object in the response array update the progress bar 
+                for (var i = 0; i < response.length; i++) {
+                    var status = response[i].status;
+                    var goals_ID = response[i].goals_ID;
+                    
+                    if(goals_ID == 1){
+                        document.getElementById("vege").style.width = status * 20 + "%";
+                        document.getElementById("vegetext").innerHTML = 'Today: ' + status + '/5';
+                    }else if(goals_ID == 2){
+                        document.getElementById("fruits").style.width = status * 20 + "%";
+                        document.getElementById("fruitstext").innerHTML = 'Today: ' + status + '/5';
+                    }else if(goals_ID == 3){
+                        document.getElementById("dairy").style.width = status * 20 + "%";
+                        document.getElementById("dairytext").innerHTML = 'Today: ' + status + '/5';
+                    }else if(goals_ID == 4){
+                        document.getElementById("snack").style.width = status * 20 + "%";
+                        document.getElementById("snacktext").innerHTML = 'Today: ' + status + '/5';
+                    }
+
+                }
+            }
+            else {
+            }
+        };
+        xhr.send('date=' + dateStr);
         }
     });
+
+
+
 </script>
 
 <?php
