@@ -107,6 +107,20 @@
     
 }
 
+.redShortBtn
+{
+    @apply 
+    text-white 
+    rounded-xl
+    uppercase
+    p-3
+    text-lg
+    font-bold 
+    cursor-pointer 
+    tracking-wider 
+    bg-red-600
+};
+
 .easetrans{
     @apply transition duration-150 ease-in-out delay-150 hover:scale-110
 }

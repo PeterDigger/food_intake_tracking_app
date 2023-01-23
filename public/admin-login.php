@@ -1,6 +1,6 @@
 <?php
     $title = "Admin";
-    include "../includes/adminheader.php";
+    include "../includes/admin-header.php";
 ?>
 
     <div class="admin absolute">
