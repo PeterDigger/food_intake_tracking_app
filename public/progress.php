@@ -3,6 +3,25 @@
     include "../includes/header.php";
 ?>
 
+<!-- Gamification elements -->
+<?php 
+$query = "SELECT user_ID FROM users WHERE user_name = '$uname'";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$uID = $row['user_ID'];
+
+$sql = $conn->query("SELECT levels, no_stars FROM reward WHERE user_ID = '$uID'");
+if ($sql->num_rows > 0) {
+    while($row = $sql->fetch_assoc()) {
+        $levels = $row['levels'];
+        $stars = $row['no_stars'];
+    }
+} else {
+    echo "0";
+}
+
+?>
+
 <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
 
 
@@ -20,9 +39,8 @@
             </div>
 
             <div class="w-2/3 bg-white">
-                <div class="text-center">Level 2</div>
+                <div class="text-center">Level <?php echo $levels; ?></div>
                 <div class="flex justify-center">
-                    <?php $stars = 2;?>
                     <?php for($i=0; $i<3; $i++): ?>
                     <div class="px-2">
                         <?php if($i<$stars) : include "../src/elements/normal_star.php";?>
@@ -39,8 +57,8 @@
         <hr class=" m-5 border-t-2 border-gray-300 pt-4">
 
         <div class="flex items-center justify-between mx-auto">
-            <button id="left" class="progress_button"><</button> 
-            <span id="date" class="font-bold text-slate-500"></span>
+            <button id="left" class="progress_button"><</button>
+                <span id="date" class="font-bold text-slate-500"></span>
             <button id="right" class="progress_button">></button>
         </div>
 
@@ -49,6 +67,7 @@
             <div id="vege" style="width: 100%;" class="max-w-2xl min-w-fit"></div>
             <div id="fruits" style="width: 100%;" class="max-w-2xl min-w-fit"></div>
             <div id="dairy" style="width: 100%;" class="max-w-2xl min-w-fit"></div>
+            <div id="snack" style="width: 100%;" class="max-w-2xl min-w-fit"></div>
         </div>
     </div>
     <!-- </div> -->
@@ -57,13 +76,19 @@
 
 </div>
 
-<!-- Gamification elements -->
 
 
 <!-- graph js -->
 <script src="../src/js/graph.js"></script>
 
 <script>
+    // Badge
+    const levely = document.getElementById("levell")
+    const levelt = document.getElementById("leveltext")
+
+    // set userID
+    var userID = parseInt( <?php echo json_encode($uID) ?>);
+
     // get the date element
     var date = document.querySelector("#date");
     // get the previous button
@@ -110,7 +135,6 @@
                 Plotly.update("fruits", data.fruits);
                 Plotly.update("dairy", data.dairy);
             });
-
     });
 
     // listen for clicks on the next button
@@ -138,6 +162,7 @@
                 Plotly.update("dairy", data.dairy);
             });
     });
+
 </script>
 
 <?php

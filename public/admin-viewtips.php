@@ -2,9 +2,7 @@
     $title = "News"; // Title page name goes here
     include "../includes/admin-header.php";
 
-    $sql = "SELECT news_name, news_description, news_ID, date FROM news ORDER BY date DESC
-    ";
-    $result = $conn->query($sql);
+
 
 ?>
 
@@ -22,24 +20,10 @@
                 <a href='admin-newtips.php'>Add</a>
             </button>
         </div>
-        <!-- if no news then print nothing to be seen -->
-        <!-- <div class="py-10 px-5 m-5 rounded-3xl bg-slate-300">
-            <div class="bg-white p-5">
-                <h2 class="text-xl my-2">No news yet</h2>
-            </div>
-        </div> -->
-
-        <!-- once got news, php will loop this div -->
-        <!-- <div class="py-10 px-5 m-5 rounded-3xl bg-slate-300">
-            <div class="bg-white p-5">
-                <h2 class="text-xl my-2">Update (December,6 2022)</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio explicabo saepe libero, quasi qui sed
-                    dolore culpa vero, consectetur sunt dicta a mollitia deleniti, voluptates iusto officiis tempore
-                    aliquam reiciendis!</p>
-            </div>
-        </div> -->
 
         <?php
+        $sql = "SELECT news_name, news_description, news_ID, date FROM news ORDER BY date DESC";
+        $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
