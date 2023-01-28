@@ -5,7 +5,7 @@
 ?>
 
 <div class="relative">
-  <button class="absolute top-5 right-5 py-2 px-4 rounded-lg">
+    <button class="absolute top-5 right-5 py-2 px-4 rounded-lg">
         <a href="admin-login.php">
             <?php
                 @include "../src/elements/admin.php"
@@ -14,6 +14,32 @@
     </button>
 </div>
 
+<!-- hidden default -->
+<div id='passed_banner'
+class='inset-center grid place-items-center grid-cols-1 shadow-2xl rounded-3xl py-10 px-10 bg-white w-fit h-fit invisible absolute'>
+    <div class='svg-container col-span-1 justify-self-center'>
+        <?php include_once '../src/elements/mascot_happy.php'; ?>
+    </div>
+    <div class='col-span-1 py-5 justify-self-center'>
+        <p>Account created successfully!</p>
+    </div>
+</div>
+<!-- success message after account creation -->
+<?php
+    if(isset($_SESSION["success_once"]) && $_SESSION["success_once"] === "success_once"){
+        echo"
+        <script>
+            document.getElementById('passed_banner').classList.toggle('invisible')
+                setTimeout(function() {
+                    document.getElementById('passed_banner').classList.toggle('invisible');
+                }, 3000);
+        </script>
+        
+        ";
+        // clear variable
+        unset($_SESSION["success_once"]);
+    }
+?>
 
     <div class="forthem">
         <div class="md:col-span-1 w-96 h-96">
