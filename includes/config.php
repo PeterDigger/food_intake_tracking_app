@@ -6,7 +6,7 @@ session_start();
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
 $password = ""; /* Password */
-$dbname = "food_tracking"; /* Database name */
+$dbname = "fypfki_foodtracker"; /* Database name */
 
 // Mysqli Procedural
 

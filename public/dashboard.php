@@ -69,10 +69,41 @@ for($i=0; $i<$result->num_rows; $i++){
 }
 ?>  
 
+<button id="guidebtn" class="bg-blue-500 p-2 rounded-md text-white fixed bottom-0 right-0 mr-2 mb-2">
+    Help
+</button>
+
 <div class="background">
     <div class="md:col-span-1 md:flex md:justify-end"></div>
 
     <div class="md:col-span-1 bg-white md:w-1/2">
+
+        <!-- Help guide  -->
+        <div id="guide" class="inset-center grid place-items-center grid-cols-1 shadow-2xl rounded-3xl py-10 px-10 bg-white w-fit h-fit invisible absolute">
+
+            <div class="flex ">
+                <div class="w-2/3 grid content-center p-5">
+                    <p>The "5 A Day" campaign, which was started by the World Health Organization (WHO), recommends consuming 5 servings of fruits and vegetables daily to lower the risk of major health problems such as heart disease, stroke, and cancer. This recommendation is based on research.</p>
+                </div>
+                <div class="w-1/3 grid p-5">
+                    <img src="../src/img/who-emblem.png" width="250" height="250">
+                </div>
+            </div>
+
+            <h1><b>How to use this system</b></h1>
+            1. You will start with empty progress bars. <img src="../src/img/step.png">
+            2. Click on the green button to add and red ones to remove the number of servings <img src="../src/img/step_1.png">
+            3. Once you reached goals, you will get stars for each task completion and to level up! <img src="../src/img/step_2.png" width="250" height="250">
+
+        </div>
+
+        <script>
+            const guide = document.getElementById("guide")
+            const guidebtn = document.getElementById("guidebtn")
+            guidebtn.addEventListener("click", function() {
+                guide.classList.toggle("invisible");
+            })
+        </script>
 
         <!-- Sad mascot (hidden default)-->
         <div id="failed_banner"

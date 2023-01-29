@@ -64,8 +64,6 @@ if(!$snackRes->num_rows > 0){
     $conn->query($sql);
 }
 
-
-
 // Update them! also check before update la 
 $sql = "SELECT reward_ID FROM reward WHERE user_ID = '$uID'";
 // $snackRes = mysqli_query($conn, $sql);
@@ -82,10 +80,9 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $nosnack = $row['occurrences'];
 
-echo $nosnack;
-
-$newstars = ($occurrences + $nosnack) % 4;
-$newlevels = floor(($occurrences + $nosnack) / 4);
+$totalstars = $occurrences + $nosnack; 
+$newstars = $totalstars % 4;
+$newlevels = floor( $totalstars / 4);
 
 if(!$levRes->num_rows > 0){
     $sql = "INSERT INTO reward (no_stars, levels, user_ID) VALUES ('$newstars', '$newlevels', '$uID');";
