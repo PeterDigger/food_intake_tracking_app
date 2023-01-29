@@ -537,6 +537,10 @@ video {
   right: 1.25rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -590,9 +594,19 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .mt-12 {
@@ -623,6 +637,10 @@ video {
   margin-top: 1.25rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -641,6 +659,10 @@ video {
 
 .grid {
   display: grid;
+}
+
+.contents {
+  display: contents;
 }
 
 .hidden {
@@ -678,6 +700,14 @@ video {
 
 .h-20 {
   height: 5rem;
+}
+
+.h-80 {
+  height: 20rem;
+}
+
+.h-10 {
+  height: 2.5rem;
 }
 
 .w-full {
@@ -729,6 +759,14 @@ video {
   width: auto;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
 .min-w-\[65\%\] {
   min-width: 65%;
 }
@@ -744,6 +782,10 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .appearance-none {
@@ -778,6 +820,10 @@ video {
 
 .place-content-center {
   place-content: center;
+}
+
+.place-content-end {
+  place-content: end;
 }
 
 .place-items-center {
@@ -990,6 +1036,11 @@ video {
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#F57154\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 113 84 / var(--tw-bg-opacity));
+}
+
 .bg-clip-padding {
   background-clip: padding-box;
 }
@@ -1009,6 +1060,10 @@ video {
 
 .p-2\.5 {
   padding: 0.625rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .py-2 {
@@ -1533,6 +1588,11 @@ video {
   .dark\:text-gray-300 {
     --tw-text-opacity: 1;
     color: rgb(209 213 219 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-gray-400 {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
   .dark\:placeholder-gray-400::-moz-placeholder {

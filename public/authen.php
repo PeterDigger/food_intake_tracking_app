@@ -15,6 +15,7 @@ if(isset($_POST['submit'])){
             $data = mysqli_fetch_assoc($result);
             session_start();
             $_SESSION['uname'] = $data['user_name'];
+            unset($_SESSION['error']);
             header('Location: dashboard.php');
         }else{
             session_start();

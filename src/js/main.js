@@ -25,150 +25,253 @@ const fruits = document.getElementById("fruits")
 const dairy = document.getElementById("dairy")
 const snack = document.getElementById("snack")
 
-vege.style.width = vegeVal * 20 + "%"
-fruits.style.width = fruitsVal * 20 + "%"
-dairy.style.width = dairyVal * 20 + "%"
-snack.style.width = snackVal * 20 + "%"
 
-vegetext.innerHTML = 'Today: ' + vegeVal + '/5';
-fruitstext.innerHTML = 'Today: ' + fruitsVal + '/5';
-dairytext.innerHTML = 'Today: ' + dairyVal + '/5';
-snacktext.innerHTML = 'Today: ' + snackVal + '/5';
+if (vegeVal >= 6) {
+    vege.style.width = 100 + "%"
+}else{
+    vege.style.width = vegeVal * 20 + "%"
+}
+
+if (fruitsVal >= 6) {
+    fruits.style.width = 100 + "%"
+}else{
+    fruits.style.width = fruitsVal * 20 + "%"
+}
+
+if (dairyVal >= 6) {
+    dairy.style.width = 100 + "%"
+}else{
+    dairy.style.width = dairyVal * 20 + "%"
+}
+
+if (snackVal >= 6) {
+    snack.style.width = 100 + "%"
+}else{
+    snack.style.width = snackVal * 20 + "%"
+}
+
+vegetext.innerHTML = 'Today: ' + vegeVal + '/5 Servings';
+fruitstext.innerHTML = 'Today: ' + fruitsVal + '/5 Servings';
+dairytext.innerHTML = 'Today: ' + dairyVal + '/5 Servings';
+snacktext.innerHTML = 'Today: ' + snackVal + '/5 Servings';
 
 greenbtn.addEventListener("click", function() {
-    if (vegeVal < 5){
-        vegeVal += 1
-        vege.style.width = vegeVal * 20 + "%"
-        if (vegeVal === 5 ){
-            happy.classList.toggle("invisible");
-            setTimeout(function(){
-                happy.classList.toggle("invisible");
-            }, 3000);
-        }
-    }else{
-        vegeVal = 5
-        vege.style.width = vegeVal * 20 + "%"
+    
+    vegeVal += 1
+    vegetext.innerHTML = 'Today: ' + vegeVal + '/5 Servings';
+
+    if(vegeVal >= 5){
+        vege.style.width = 100 + "%"
+    }else if(vegeVal === 4){
+        vege.style.width = 80 + "%"
+    }else if(vegeVal === 3){
+        vege.style.width = 60 + "%"
+    }else if(vegeVal === 2){
+        vege.style.width = 40 + "%"
+    }else if(vegeVal === 1){
+        vege.style.width = 20 + "%"
+    }else if(vegeVal === 0){
+        vege.style.width = 0 + "%"
     }
-    vegetext.innerHTML = 'Today: ' + vegeVal + '/5';
+
+    if (vegeVal === 5 ){
+        happy.classList.toggle("invisible");
+        setTimeout(function(){
+            happy.classList.toggle("invisible");
+        }, 3000);
+    }
+
 })
 
+
 greenbtn1.addEventListener("click", function() {
-    if (fruitsVal < 5){
-        fruitsVal += 1
-        fruits.style.width = fruitsVal * 20 + "%"
-        if (fruitsVal === 5 ){
-            happy.classList.toggle("invisible");
-            setTimeout(function(){
-                happy.classList.toggle("invisible");
-            }, 3000);
-        }
-    }else{
-        fruitsVal = 5
-        fruits.style.width = fruitsVal * 20 + "%"
+    fruitsVal += 1
+    fruitstext.innerHTML = 'Today: ' + fruitsVal + '/5 Servings';
+
+    if(fruitsVal >= 5){
+        fruits.style.width = 100 + "%"
+    }else if(fruitsVal === 4){
+        fruits.style.width = 80 + "%"
+    }else if(fruitsVal === 3){
+        fruits.style.width = 60 + "%"
+    }else if(fruitsVal === 2){
+        fruits.style.width = 40 + "%"
+    }else if(fruitsVal === 1){
+        fruits.style.width = 20 + "%"
+    }else if(fruitsVal === 0){
+        fruits.style.width = 0 + "%"
     }
-    fruitstext.innerHTML = 'Today: ' + fruitsVal + '/5';
+
+    if (fruitsVal === 5 ){
+        happy.classList.toggle("invisible");
+        setTimeout(function(){
+            happy.classList.toggle("invisible");
+        }, 3000);
+    }
 })
 
 greenbtn2.addEventListener("click", function() {
-    if (dairyVal < 5){
         dairyVal += 1
-        dairy.style.width = dairyVal * 20 + "%"
+        dairytext.innerHTML = 'Today: ' + dairyVal + '/5 Servings';
+    
+        if(dairyVal >= 5){
+            dairy.style.width = 100 + "%"
+        }else if(dairyVal === 4){
+            dairy.style.width = 80 + "%"
+        }else if(dairyVal === 3){
+            dairy.style.width = 60 + "%"
+        }else if(dairyVal === 2){
+            dairy.style.width = 40 + "%"
+        }else if(dairyVal === 1){
+            dairy.style.width = 20 + "%"
+        }else if(dairyVal === 0){
+            dairy.style.width = 0 + "%"
+        }
+    
         if (dairyVal === 5 ){
             happy.classList.toggle("invisible");
             setTimeout(function(){
                 happy.classList.toggle("invisible");
             }, 3000);
         }
-    }else{
-        dairyVal = 5
-        dairy.style.width = dairyVal * 20 + "%"
-    }
-    dairytext.innerHTML = 'Today: ' + dairyVal + '/5';
 })
 
 greenbtn3.addEventListener("click", function() {
-    if (snackVal < 5){
-        snackVal += 1
-        snack.style.width = snackVal * 20 + "%"
-        if (snackVal === 5 ){
-            happy.classList.toggle("invisible");
-            setTimeout(function(){
-                happy.classList.toggle("invisible");
-            }, 3000);
-        }
-    }else{
-        snackVal = 5
-        snack.style.width = snackVal * 20 + "%"
+    snackVal += 1
+    snacktext.innerHTML = 'Today: ' + snackVal + '/5 Servings';
+
+    if(snackVal >= 5){
+        snack.style.width = 100 + "%"
+    }else if(snackVal === 4){
+        snack.style.width = 80 + "%"
+    }else if(snackVal === 3){
+        snack.style.width = 60 + "%"
+    }else if(snackVal === 2){
+        snack.style.width = 40 + "%"
+    }else if(snackVal === 1){
+        snack.style.width = 20 + "%"
+    }else if(snackVal === 0){
+        snack.style.width = 0 + "%"
     }
-    snacktext.innerHTML = 'Today: ' + snackVal + '/5';
+
+    if (snackVal === 5 ){
+        sad.classList.toggle("invisible");
+        setTimeout(function(){
+            sad.classList.toggle("invisible");
+        }, 3000);
+    }
 })
 
 redbtn.addEventListener("click", function() {
-        if (vegeVal > 0){
-            vegeVal -= 1
-            vege.style.width = vegeVal * 20 + "%"
-            if (vegeVal === 0 ){
-                sad.classList.toggle("invisible");
-                setTimeout(function(){
-                    sad.classList.toggle("invisible");
-                }, 3000);
-            }
-        }else{
-            vegeVal = 0
-            vege.style.width = vegeVal * 20 + "%"
+    if (vegeVal > 0){
+        vegeVal -= 1
+        vegetext.innerHTML = 'Today: ' + vegeVal + '/5 Servings';
+    
+        if(vegeVal >= 5){
+            vege.style.width = 100 + "%"
+        }else if(vegeVal === 4){
+            vege.style.width = 80 + "%"
+        }else if(vegeVal === 3){
+            vege.style.width = 60 + "%"
+        }else if(vegeVal === 2){
+            vege.style.width = 40 + "%"
+        }else if(vegeVal === 1){
+            vege.style.width = 20 + "%"
+        }else if(vegeVal === 0){
+            vege.style.width = 0 + "%"
         }
-    vegetext.innerHTML = 'Today: ' + vegeVal + '/5';
+    
+        if (vegeVal === 0 ){
+            sad.classList.toggle("invisible");
+            setTimeout(function(){
+                sad.classList.toggle("invisible");
+            }, 3000);
+        }
+    } 
 })
 
 redbtn1.addEventListener("click", function() {
     if (fruitsVal > 0){
         fruitsVal -= 1
-        fruits.style.width = fruitsVal * 20 + "%"
+        fruitstext.innerHTML = 'Today: ' + fruitsVal + '/5 Servings';
+    
+        if(fruitsVal >= 5){
+            fruits.style.width = 100 + "%"
+        }else if(fruitsVal === 4){
+            fruits.style.width = 80 + "%"
+        }else if(fruitsVal === 3){
+            fruits.style.width = 60 + "%"
+        }else if(fruitsVal === 2){
+            fruits.style.width = 40 + "%"
+        }else if(fruitsVal === 1){
+            fruits.style.width = 20 + "%"
+        }else if(fruitsVal === 0){
+            fruits.style.width = 0 + "%"
+        }
+    
         if (fruitsVal === 0 ){
             sad.classList.toggle("invisible");
             setTimeout(function(){
                 sad.classList.toggle("invisible");
             }, 3000);
         }
-    }else{
-        fruitsVal = 0
-        fruits.style.width = fruitsVal * 20 + "%"
-    }
-    fruitstext.innerHTML = 'Today: ' + fruitsVal + '/5';
+    } 
 })
 
 redbtn2.addEventListener("click", function() {
     if (dairyVal > 0){
         dairyVal -= 1
-        dairy.style.width = dairyVal * 20 + "%"
+        dairytext.innerHTML = 'Today: ' + dairyVal + '/5 Servings';
+    
+        if(dairyVal >= 5){
+            dairy.style.width = 100 + "%"
+        }else if(dairyVal === 4){
+            dairy.style.width = 80 + "%"
+        }else if(dairyVal === 3){
+            dairy.style.width = 60 + "%"
+        }else if(dairyVal === 2){
+            dairy.style.width = 40 + "%"
+        }else if(dairyVal === 1){
+            dairy.style.width = 20 + "%"
+        }else if(dairyVal === 0){
+            dairy.style.width = 0 + "%"
+        }
+    
         if (dairyVal === 0 ){
             sad.classList.toggle("invisible");
             setTimeout(function(){
                 sad.classList.toggle("invisible");
             }, 3000);
         }
-    }else{
-        dairyVal = 0
-        dairy.style.width = dairyVal * 20 + "%"
-    }
-    dairytext.innerHTML = 'Today: ' + dairyVal + '/5';
+    } 
 })
 
 redbtn3.addEventListener("click", function() {
     if (snackVal > 0){
         snackVal -= 1
-        snack.style.width = snackVal * 20 + "%"
+        snacktext.innerHTML = 'Today: ' + snackVal + '/5 Servings';
+    
+        if(snackVal >= 5){
+            snack.style.width = 100 + "%"
+        }else if(snackVal === 4){
+            snack.style.width = 80 + "%"
+        }else if(snackVal === 3){
+            snack.style.width = 60 + "%"
+        }else if(snackVal === 2){
+            snack.style.width = 40 + "%"
+        }else if(snackVal === 1){
+            snack.style.width = 20 + "%"
+        }else if(snackVal === 0){
+            snack.style.width = 0 + "%"
+        }
+    
         if (snackVal === 0 ){
-            sad.classList.toggle("invisible");
+            happy.classList.toggle("invisible");
             setTimeout(function(){
-                sad.classList.toggle("invisible");
+                happy.classList.toggle("invisible");
             }, 3000);
         }
-    }else{
-        snackVal = 0
-        snack.style.width = snackVal * 20 + "%"
-    }
-    snacktext.innerHTML = 'Today: ' + snackVal + '/5';
+    } 
 })
 
 function updatelevel(){
@@ -212,10 +315,10 @@ flatpickr("#datepicker-button", {
         fruits.style.width = status * 20 + "%";
         dairy.style.width = status * 20 + "%";
         snack.style.width = status * 20 + "%";
-        vegetext.innerHTML = 'Today: ' + status + '/5';
-        fruitstext.innerHTML = 'Today: ' + status + '/5';
-        dairytext.innerHTML = 'Today: ' + status + '/5';
-        snacktext.innerHTML = 'Today: ' + status + '/5';
+        vegetext.innerHTML = 'Today: ' + status + '/5 Servings';
+        fruitstext.innerHTML = 'Today: ' + status + '/5 Servings';
+        dairytext.innerHTML = 'Today: ' + status + '/5 Servings';
+        snacktext.innerHTML = 'Today: ' + status + '/5 Servings';
 
         // Send an AJAX request to a PHP script to fetch the data
         var xhr = new XMLHttpRequest();
@@ -234,19 +337,19 @@ flatpickr("#datepicker-button", {
 
                     if (goals_ID == 1) {
                         status >= 6 ? vege.style.width = 100 + "%" : vege.style.width = status * 20 + "%";
-                        vegetext.innerHTML = 'Today: ' + status + '/5';
+                        vegetext.innerHTML = 'Today: ' + status + '/5 Servings';
                         vegeVal = status;
                     } else if (goals_ID == 2) {
                         status >= 6 ? fruits.style.width = 100 + "%" : fruits.style.width = status * 20 + "%";
-                        fruitstext.innerHTML = 'Today: ' + status + '/5';
+                        fruitstext.innerHTML = 'Today: ' + status + '/5 Servings';
                         fruitsVal = status;
                     } else if (goals_ID == 3) {
                         status >= 6 ? dairy.style.width = 100 + "%" : dairy.style.width = status * 20 + "%";
-                        dairytext.innerHTML = 'Today: ' + status + '/5';
+                        dairytext.innerHTML = 'Today: ' + status + '/5 Servings';
                         dairyVal = status;
                     } else if (goals_ID == 4) {
                         status >= 6 ? snack.style.width = 100 + "%" : snack.style.width = status * 20 + "%";
-                        snacktext.innerHTML = 'Today: ' + status + '/5';
+                        snacktext.innerHTML = 'Today: ' + status + '/5 Servings';
                         snackVal = status;
                     }
                 }

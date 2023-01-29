@@ -14,7 +14,7 @@
     $id=$_REQUEST['id'];
     $updatenow = "DELETE FROM news WHERE news_ID=$id" ;
     if ($conn->query($updatenow) === TRUE) {
-        header("Location: admin-viewtips.php");
+        header("Location:admin-viewtips.php");
     } else {
         echo '<script>alert("Update Failed")</script>' . $conn->error;
     };

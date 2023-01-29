@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
         }else{
             session_start();
             $_SESSION["error"] = "Invalid username or password.";
-            header('Location: admin.php');
+            header('Location: admin-login.php');
         }
     }else{
         header('Location: index.php');

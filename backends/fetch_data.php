@@ -8,13 +8,12 @@
     $uID = $_POST['uID'];
     $week_number = $_POST['week'];
 
-    function check_data($data_json, $data){
+function check_data($data_json, $data){
         $week_number = $_POST['week'];
         $year = date('Y');
         $datetime = new DateTime();
         $datetime->setISODate($year, $week_number);
         $start_day = $datetime->format('Y-m-d');
-        $end_day = date("Y-m-d",strtotime("this week +6 day",strtotime("+".($week_number-1)." week")));
         $datetime->modify('+6 days');
         $end_day = $datetime->format('Y-m-d');
         for ($i = strtotime($start_day); $i <= strtotime($end_day); $i = strtotime("+1 day", $i)) {
@@ -23,6 +22,7 @@
                 $data[$current_day] = "";
             }
         }
+        ksort($data);
         return $data_json = json_encode($data);
     }
 
@@ -52,7 +52,6 @@ $week_start = $datetime->format('Y-m-d');
 $week_end = date("Y-m-d",strtotime("this week +6 day",strtotime("+".($week_number-1)." week")));
 $datetime->modify('+6 days');
 $week_end = $datetime->format('Y-m-d');
-
 
 $data_json_vege = get_data_json($conn, $uID, $week_start, $week_end, 1);
 $data_json_fruits = get_data_json($conn, $uID, $week_start, $week_end, 2);

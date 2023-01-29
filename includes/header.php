@@ -18,6 +18,29 @@
     }
 
     $currentPage = basename($_SERVER['PHP_SELF']);
+
+    //  THiS FOR THE PROFILE PHOTO
+
+    if (isset($uname)){
+        $query = "SELECT user_ID FROM users WHERE user_name = '$uname'";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        $uID = $row['user_ID'];
+        
+        //query to get image path from db
+        $query = "SELECT profile_photo FROM users WHERE user_ID = '$uID'";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        $img_path = $row['profile_photo'];
+        if(empty($img_path)){
+            $img_path = '../src/img/avatar.png';
+        }
+    
+        //read image contents
+        $img_data = file_get_contents($img_path);
+        //encode image contents as base64
+        $img_data_base64 = base64_encode($img_data);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -65,8 +88,13 @@
     <div class="col-start-4 col-span-1 text-center place-self-center text-white p-2 <?php echo ($currentPage == "tips.php") ? 'w-full rounded-xl text-black bg-green-300':''?>">
         <a href="tips.php">Tips</a>
     </div>
-    <div class="relative col-start-5 col-span-1 text-center place-self-center text-white p-2">
-        <a href="#" class="bg-transparent text-center text-white rounded-full focus:outline-none" id="dropdown-button">
+    <div class="relative col-start-5 col-span-1 text-center  text-white p-2">
+        <div class="flex items-center">
+
+            <img id="upload-input" class="w-10 h-10 mx-5 rounded-full" src="data:image/jpeg;base64,<?php echo $img_data_base64; ?>">
+            <a href="#" class="bg-transparent text-center text-white rounded-full focus:outline-none" id="dropdown-button">
+
+
             <?php
                 if(isset($uname))
                 {
@@ -78,6 +106,7 @@
                 }
             ?>
         </a>
+        </div>
         <div class="absolute right-0 w-48 py-2 bg-white rounded-lg shadow-xl hidden" id="dropdown-menu">
             <a href="editprofile.php" class="block px-4 py-2 text-gray-800 hover:bg-green-300 hover:text-black">Edit Profile</a>
             <form method="post" action="">

@@ -16,7 +16,7 @@
     $adminID = $conn->query("SELECT admin_ID FROM admin WHERE admin_name='".$uname."'");
     if ($adminID->num_rows > 0 ){
         while($rows = $adminID->fetch_assoc()){
-            $AD_id    = $rows['admin_ID'];
+            $AD_id = $rows['admin_ID'];
         };
     }else{
         echo "no result";
@@ -25,12 +25,12 @@
     if(isset($_POST['submit'])){
         $name = mysqli_real_escape_string($conn, $_POST['name']);
         $description = mysqli_real_escape_string($conn, $_POST['description']);
-        $id = mysqli_real_escape_string($conn, $_POST['id']);
 
         $sql = "INSERT INTO news (news_name, news_description, date, admin_ID) VALUES ('$name', '$description', NOW(), '$AD_id')";
 
         if ($conn->query($sql) === TRUE) {
             header("Location: admin-viewtips.php");
+            exit();
         } else {
             echo "Error updating record: " . $conn->error;
         }

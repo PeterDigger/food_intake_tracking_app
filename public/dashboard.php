@@ -200,7 +200,7 @@ for($i=0; $i<$result->num_rows; $i++){
                     <p>Snack</p>
                     <p id="snacktext"></p>
                 </div>
-                <div id="snack" class="bg-yellow-500 rounded-xl h-20"></div>
+                <div id="snack" class="bg-[#F57154] rounded-xl h-20"></div>
                 <div id="snackdiv" class="inline-block absolute place-self-end">
                     <button class="easetrans" id="greenbtn3"><?php @include "../src/elements/add.php" ?></button>
                     <button class="easetrans" id="redbtn3"><?php @include "../src/elements/minus.php" ?></button>
