@@ -5,4 +5,4 @@ This is a web application which mainly uses PHP, JavaScript, TailwindCSS and MyS
 
 Progress graph was generated using the Plotly.js charting library that comes with over 40 chart types, 3D charts, statistical graphs, and SVG maps. For more information, can go visit [https://plotly.com/javascript/getting-started/](https://plotly.com/javascript/getting-started/)
 
-It is also been hosted at the [https://fypfki.com/food-tracker/](https://fypfki.com/food-tracker/)
+It is also been hosted at the [https://fypfki.com/food-tracker/](https://fypfki.com/food-tracker/public)
