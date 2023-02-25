@@ -1,0 +1,5 @@
+# can be reinstall by the package.json
+node_modules/
+
+# unnecessary folders
+Archive/
