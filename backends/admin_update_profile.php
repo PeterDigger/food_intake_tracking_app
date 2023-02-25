@@ -8,8 +8,8 @@
     if (isset($_POST['submit'])) {
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $id = mysqli_real_escape_string($conn, $_POST['id']);
-        // Get the form data
         
+        // Get the form data
         if(!empty($_POST['oldpassword']) && !empty($_POST['newpassword'])){
             $oldpassword = mysqli_real_escape_string($conn, $_POST['oldpassword']);
             $newpassword = mysqli_real_escape_string($conn, $_POST['newpassword']);
@@ -49,19 +49,12 @@
 
             $uploadOk = 1;
 
-                      // Get the photo information
+            // Get the photo information
             $photo = $_FILES['photo'];
 
             // Set target file path and file type
             $target_file = "../uploads/".$photo['name'];
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-            // // Check if file already exists
-            // if (file_exists($target_file)) {
-            //     $_SESSION["error"] = "Sorry, file already exists.";
-            //     header("Location:../public/admin-editprofile.php");
-            //     $uploadOk = 0;
-            // }
         
             // Check file size
             if ($photo["size"] > 10485760) {

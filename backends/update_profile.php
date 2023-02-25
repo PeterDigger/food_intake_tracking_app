@@ -55,13 +55,6 @@
             // Set target file path and file type
             $target_file = "../uploads/".$photo['name'];
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-            // // Check if file already exists
-            // if (file_exists($target_file)) {
-            //     $_SESSION["error"] = "Sorry, file already exists.";
-            //     header("Location:../public/editprofile.php");
-            //     $uploadOk = 0;
-            // }
         
             // Check file size
             if ($photo["size"] > 10485760) {

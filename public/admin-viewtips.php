@@ -1,9 +1,6 @@
 <?php
     $title = "News"; // Title page name goes here
     include "../includes/admin-header.php";
-
-
-
 ?>
 
 <div class="background2">
